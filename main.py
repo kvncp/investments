@@ -15,10 +15,13 @@ BOND_ALLOCATION = 1-STOCK_ALLOCATION
 
 
 def _parse_allocations():
+    allocations = {}
     with open(os.path.join(pathlib.Path(__file__).parent.absolute(), 'fund_allocations.csv')) as f:
         csv_reader = csv.reader(f)
         for row in csv_reader:
-            print(', '.join(row))
+            allocations[row[0]] = row[1:]
+
+    return allocations
 
 
 def min_func(x, funds, desired_allocations):
