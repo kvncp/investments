@@ -7,4 +7,4 @@ steps:
   dir: 'function/dir/from/repo/root'
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['functions', 'deploy', 'investments', '--trigger-http', '--runtime', 'python37', '--entry-point', 'calc']
-  dir: 'function/dir/from/repo/root'
+  dir: '/'
